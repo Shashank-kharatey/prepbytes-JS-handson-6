@@ -48,26 +48,41 @@
         };
         </pre>
     </p>
-    <p>Q.2 You are given a string S containing both uppercase and lowercase letters. You need to find out the number of vowels in the given string. Note: You have to complete Count_Vowel function. No need to take any input.</p>
-    <p><pre>Ans.2 var Count_Vowels= (S) => 
-        { var count=0;
-           for (i=0; i < S.length; i++)
-           {
-             if ((S.charAt(i)==='A')||(S.charAt(i)==='a')||(S.charAt(i)==='E')
-                ||(S.charAt(i)==='e')||(S.charAt(i)==='I')||(S.charAt(i)==='i')||(S.charAt(i)==='O')
-                ||(S.charAt(i)==='o')||(S.charAt(i)==='U')||(S.charAt(i)==='u'))
-             {
-              count++; 
-             }
-           } return count;
+    <p>Q.2 Write a program which takes a numebr N as input from the user and You need to reverse the number. Note: You have to complete Reverse_Number function. No need to take any input.</p>
+    <p><pre>Ans.2 var Reverse_Number = (N) => 
+        {
+          var L=0;
+          while(N)
+          {
+            L+=N%10;
+            N=parseInt(N/10);
+            if (N!==0)
+            {
+              L*=10;
+            }
+          }
+          return L;
         };</pre>
     </p>
-    <p>Q.3 You are given two strings S1 and S2 (containing both uppercase and lowercase letters), You need to retrun a string which is the concatenation of both the given strings. Note: You have to complete Concatenate_Strings function. No need to take any input.</p>
-    <p><pre>Ans.3 var Concatenate_Strings = (S1, S2) => 
+    <p>Q.3 You are given two strings S1 and S2, you need to check whether the string S1 is a substring of string S2 or not. Note: You have to complete Substring_Check function. No need to take any input.</p>
+    <p><pre>Ans.3 var Substring_Check = (S1, S2) => 
         {
-           var S3=S1;
-           S3+=S2;
-           return S3 ;
+          var n=0;
+          var newstr="";
+          S1+=" ";
+          for (i=0; i < S1.length; i++)
+          {
+            if (S1.charAt(i)===" ")
+            {
+              newstr=S1.slice(n,i);
+              if (newstr===S2)
+              {
+                return "YES";
+              }
+              n=i+1;
+            }
+          }
+          return "NO";
         };</pre>
     </p>
     <p>Q.4 You are given a string S, and your task is to return the length of the string S. Note: You have to solve it without using length method. You have to complete findLength function. No need to take any input.</p>
